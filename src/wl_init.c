@@ -24,6 +24,10 @@
 //
 //========================================================================
 
+#define POSIX_REQUIRED_STANDARD 199309L
+#define _POSIX_C_SOURCE POSIX_REQUIRED_STANDARD
+#define _POSIX_SOURCE POSIX_REQUIRED_STANDARD
+
 #include "internal.h"
 
 #if defined(_GLFW_WAYLAND)

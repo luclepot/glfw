@@ -28,6 +28,12 @@
 
 #include "internal.h"
 
+#if __has_include("<linux/linux-event-codes.h>")
+#   include <linux/linux_input_codes.h>
+#else
+#   include <linux/input.h>
+#endif 
+
 #if defined(_GLFW_WAYLAND)
 
 #include <stdio.h>
@@ -40,7 +46,6 @@
 #include <sys/mman.h>
 #include <sys/timerfd.h>
 #include <poll.h>
-#include <linux/input-event-codes.h>
 
 #include "wayland-client-protocol.h"
 #include "xdg-shell-client-protocol.h"
